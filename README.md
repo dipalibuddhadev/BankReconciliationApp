@@ -1,45 +1,38 @@
-## Hi
-You are going through a technical interview with us at TSB, how exciting!
+Bank Reconciliation App
 
-The purpose of this exercise is to get you building something that solves an actual customer problem, lets you
-think through it and start on it on your own, so that you can come in and walk us through your solution.
+This is an Android Developer Exercise for bank reconciliation.
+The purpose is to demonstrate logic for matching bank transactions against accounting records (invoices, bills, etc.).
 
-## Overview
-For this test users have to do bank reconciliation, where bank transactions are matched against the corresponding 
-accounting records (Invoices, Bills, etc.).
+Features Implemented
 
-If an exact match is found, then the system will automatically suggest a match. There can also be
-multiple accounting records which match to a single transaction, but if some combination of the
-records sum to be an exact match, then the user has to find and select them themselves.
-Surely there is a better way!
+Dynamic Remaining Total
 
-## Goals
-If you run the application in this project you will see a single activity which displays a list of
-accounting records and the total amount of a transaction at the top, there's not much else to it!
+When user selects/deselects a record, its amount is subtracted/added to the remaining total.
 
-And that's where you come in:
+Auto-Select Exact Match
 
-You have two pieces of functionality to add. And we don't want you spending too much time on it, so
-if you run out of time or get stuck then don't worry, we can talk through it together during the
-interview.
+If a single accounting record matches the transaction total, it is auto-selected on launch.
 
-1. Wire up the behaviour so that when an accounting record is selected, it is subtracted from the
-   remaining total at the top.
+Auto-Select Subset Match
 
-2. When the activity opens initially, select a single transaction that matches remaining total
-   automatically if any.
+If multiple records together sum up to the transaction total, they are auto-selected automatically.
 
+CheckBox UI
 
-### Thought Experiment
+Users select/deselect records via checkboxes (instead of background highlight).
 
-We'd also like you to THINK ABOUT how we could achieve the following functionality:
-When a subset of the accounting records sum to be an exact match of the remaining total, then
-automatically select them. You don't need to write any code here. We will aim to explore your
-thinking and design when you come in.
+User-Friendly UI
 
-## Hints
+Clean RecyclerView list with description and amount.
 
-As you go, mark down any questions or concerns which come up, we would love to hear them as you walk
-us through the code during the upcoming interview.
+Real-time updates to remaining balance at the top.
 
-You can change, delete or add classes, interfaces, layouts, tests and dependencies as you see fit.
+Tech Stack
+
+Language: Java
+
+Framework: Android SDK
+
+UI: RecyclerView + CheckBox + TextView
+
+Algorithm: Subset Sum (Backtracking) for auto-selection
